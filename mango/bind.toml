@@ -1,0 +1,67 @@
+[bind.default]
+
+# reload config
+"SUPER+r" = "reload_config"
+
+# menu and terminal
+"SUPER+space" = "spawn,rofi -show drun -theme ~/.config/rofi/minimal.rasi"
+"SUPER+Return" = "spawn,foot"
+"SUPER+f" = "spawn,firefox-wayland"
+"SUPER+e" = "spawn,dolphin"
+"SUPER+escape" = "spawn,/home/henrryk/.local/bin/sysmenu"
+"SUPER+s" = "spawn,/home/henrryk/.local/bin/print"
+"SUPER+w" = "spawn,/home/henrryk/.local/bin/wallpaper"
+
+# exit
+"SUPER+SHIFT+q" = "quit"
+"SUPER+q" = "killclient,"
+
+# move window
+"SUPER+SHIFT+Up" = "move_client,up"
+"SUPER+SHIFT+Down" = "move_client,down"
+"SUPER+SHIFT+Left" = "move_client,left"
+"SUPER+SHIFT+Right" = "move_client,right"
+
+# switch window status
+"SUPER+v" = "togglefloating,"
+"SUPER+SHIFT+v" = "togglefullscreen,"
+
+# switch layout
+"SUPER+n" = "switch_layout"
+
+# tag switch
+"SUPER+Left" = "viewtoleft,0"
+"SUPER+Right" = "viewtoright,0"
+"SUPER+1" = "view,1,0"
+"SUPER+2" = "view,2,0"
+"SUPER+3" = "view,3,0"
+"SUPER+4" = "view,4,0"
+"SUPER+5" = "view,5,0"
+"SUPER+6" = "view,6,0"
+"SUPER+7" = "view,7,0"
+"SUPER+8" = "view,8,0"
+"SUPER+9" = "view,9,0"
+"SUPER+SHIFT+1" = "tag,1,0"
+"SUPER+SHIFT+2" = "tag,2,0"
+"SUPER+SHIFT+3" = "tag,3,0"
+"SUPER+SHIFT+4" = "tag,4,0"
+"SUPER+SHIFT+5" = "tag,5,0"
+"SUPER+SHIFT+6" = "tag,6,0"
+"SUPER+SHIFT+7" = "tag,7,0"
+"SUPER+SHIFT+8" = "tag,8,0"
+"SUPER+SHIFT+9" = "tag,9,0"
+
+# brightness (ANTES do mousebind)
+"XF86MonBrightnessUp" = "spawn,swayosd-client --brightness raise"
+"XF86MonBrightnessDown" = "spawn,swayosd-client --brightness lower"
+# volume (rodinha do teclado)
+"XF86AudioRaiseVolume" = "spawn,swayosd-client --output-volume +2"
+"XF86AudioLowerVolume" = "spawn,swayosd-client --output-volume -2"
+"XF86AudioMute" = "spawn,swayosd-client --output-volume mute-toggle"
+
+
+[mousebind.default]
+
+"SUPER+btn_left" = "moveresize,curmove"
+"SUPER+btn_right" = "moveresize,curresize"
+

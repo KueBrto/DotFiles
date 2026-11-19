@@ -1,0 +1,76 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 18,
+  "margin-top": 0,
+  "output": "DP-1",
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "modules-left": ["group/power", "ext/workspaces"],
+  "modules-right": ["tray", "pulseaudio", "clock"],
+
+  "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 250,
+      "children-class": "not-power",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/void",
+      "custom/reboot",
+      "custom/quit"
+    ]
+  },
+
+  "custom/void": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "loginctl poweroff"
+  },
+
+  "custom/reboot": {
+    "format": "reboot",
+    "tooltip": false,
+    "on-click": "loginctl reboot"
+  },
+
+  "custom/quit": {
+    "format": "exit",
+    "tooltip": false,
+    "on-click": "pkill -x mango"
+  },
+
+  "ext/workspaces": {
+    "format": "{icon}",
+    "ignore-hidden": false,
+    "on-click": "activate",
+    "sort-by-id": true,
+    "format-icons": {
+      "1": "home",
+      "2": "pcbinv",
+      "3": "crackpipe",
+      "4": "showcase",
+      "default": ""
+    }
+  },
+
+  "pulseaudio": {
+    "format": "vol: {volume}%",
+    "format-muted": "vol: mute",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 8
+  },
+
+  "clock": {
+    "format": "{:%A / %B %d / %H:%M}",
+    "interval": 60,
+    "tooltip": false
+  }
+}
+

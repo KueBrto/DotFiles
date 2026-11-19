@@ -1,0 +1,101 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Terminus (TTF)", "Symbols Nerd Font";
+    font-size: 17px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #121212;
+    color: #b0b0b0;
+}
+
+#power {
+    background-color: transparent;
+}
+
+#custom-void {
+    color: #a6e3e9;
+    background-color: transparent;
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+#custom-void:hover {
+    color: #f38ba8;
+}
+
+.not-power {
+    background-color: transparent;
+}
+
+#custom-reboot,
+#custom-quit {
+    color: #b0b0b0;
+    background-color: transparent;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+#custom-reboot:hover {
+    color: #a6e3e9;
+}
+
+#custom-quit:hover {
+    color: #f38ba8;
+}
+
+#workspaces {
+    padding-left: 0px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: #b0b0b0;
+    background: transparent;
+    font-weight: 600;
+}
+
+#workspaces button:nth-child(n+5) {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+#workspaces button.hidden {
+    color: #707070;
+}
+
+#workspaces button.active {
+    color: #a6e3e9;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+}
+
+#pulseaudio {
+    padding-right: 12px;
+    color: #b0b0b0;
+}
+
+#tray {
+    padding-right: 12px;
+}
+
+#clock {
+    padding-right: 1px;
+    color: #b0b0b0;
+}
+

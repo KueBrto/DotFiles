@@ -1,0 +1,42 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "spacing": 0, 
+    "output": "DP-1",
+
+    "modules-center": [       
+        "image#album-art",
+        "custom/media", 
+        "clock"
+    ],
+
+    "image#album-art": {
+        "exec": "art_url=$(playerctl metadata mpris:artUrl 2>/dev/null); if [ -n \"$art_url\" ]; then if [[ \"$art_url\" == file://* ]]; then echo \"${art_url#file://}\"; else cache_dir=\"/tmp/waybar-art\"; mkdir -p \"$cache_dir\"; hash_url=$(echo -n \"$art_url\" | md5sum | awk '{print $1}'); if [ ! -f \"$cache_dir/$hash_url\" ]; then curl -s \"$art_url\" -o \"$cache_dir/$hash_url\"; fi; echo \"$cache_dir/$hash_url\"; fi; else echo \"/tmp/non-existent-image.png\"; fi",
+        "size": 16,
+        "interval": 2
+    },
+
+    "custom/media": {
+        "format": "{}", 
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "playerctl metadata --format '{\"text\": \"{{title}} ~ {{artist}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' 2>/dev/null || echo '{\"text\": \"Sudo rm -f ~/...\", \"class\": \"no-media\"}'",
+        "interval": 2,
+        "on-click": "playerctl play-pause"
+    },
+
+    "clock": {
+        "format": "{:%a - %b %d   %I:%M%p}", 
+        "interval": 60
+    },
+
+    "group/tray-drawer": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 0,
+            "children-class": "tray-items",
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        }
+
