@@ -2,7 +2,7 @@
 
 Minimalist Wayland environment on **Void Linux**.
 
-![preview](./preview.png)
+![preview](./showcase/preview.png)
 
 ## stack
 
